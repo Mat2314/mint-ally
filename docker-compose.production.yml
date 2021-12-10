@@ -1,0 +1,65 @@
+version: "3.9"
+
+services:
+    db:
+      image: postgres:12
+      volumes:
+        - ./data/db:/var/lib/postgresql/data
+      environment:
+        - POSTGRES_DB=${POSTGRES_DB}
+        - POSTGRES_USER=${POSTGRES_USER}
+        - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+
+    api:
+        build: .
+        command: bash -c "python manage.py migrate; python manage.py collectstatic --noinput ; gunicorn mintally.wsgi:application --bind 0.0.0.0:${PORT}"
+        volumes:
+            - ./app:/code
+            - ./app/static:/code/static
+        expose:
+            - "${PORT}"
+        environment:
+          - CELERY_BROKER=amqp://guest:guest@rabbitmq:5672
+        depends_on:
+            - db
+        restart: on-failure
+
+    rabbitmq:
+        image: rabbitmq:management-alpine
+        hostname: rabbitmq
+        restart: on-failure
+
+    celery:
+        build: .
+        command: celery -A ${APP_NAME} worker -l info --max-tasks-per-child=1
+        volumes:
+            - ./app:/code
+        environment:
+          - CELERY_BROKER=amqp://guest:guest@rabbitmq:5672
+        restart: on-failure
+        depends_on:
+            - rabbitmq
+
+    celerybeat:
+        build: .
+        command: celery -A ${APP_NAME} beat -l info
+        volumes:
+            - ./app:/code
+        environment:
+          - CELERY_BROKER=amqp://guest:guest@rabbitmq:5672
+        restart: on-failure
+        
+    frontend:
+        build:
+            dockerfile: ./Nginx.Dockerfile
+            context: .
+        volumes:
+            - ./volumes/static:/www/static
+            - ./frontend/dist/${APP_NAME}:/www/${APP_NAME}
+            - ./frontend/dist/${APP_NAME}/assets:/assets
+        ports:
+            - "${PORT}:80"
+        depends_on:
+            - api
+        restart: on-failure
+

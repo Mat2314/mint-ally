@@ -1,5 +1,6 @@
 # Custom files
 app/myvenv
+app/static
 data
 
 # Byte-compiled / optimized / DLL files
