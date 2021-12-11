@@ -1,1 +1,27 @@
-<p>how-are-you-page works!</p>
+<h3 class="section-header">How do you feel today?</h3>
+
+<div class="row mt-4">
+    <div class="col-lg-4"></div>
+    <div class="col-xs-12 col-lg-4 mx-3">
+        <app-message-card 
+            [title]="'TEST'"
+            [backgroundImage]="'../../assets/images/flower-zoom.jpg'"
+        >Taki content</app-message-card>
+    </div>
+    <div class="col-lg-4"></div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-lg-4"></div>
+    <div class="col-xs-12 col-lg-4 mx-3">
+        <div class="form-container bg-white">
+            <app-mood-form></app-mood-form>
+        </div>
+    </div>
+    <div class="col-lg-4"></div>
+</div>
+
+
+<div class="bottom-button mx-auto">
+    <button mat-raised-button color="primary">History</button>
+</div>

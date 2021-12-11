@@ -1,0 +1,21 @@
+<form [formGroup]="moodForm">
+    <div class="row">
+        <div *ngFor="let icon of moodIcons"
+            [id]="icon.name"
+            (click)="onIconClicked(icon)"
+            class="col text-center mood-icon"
+            [ngClass]="{'selected': icon.selected}">
+            <fa-icon [icon]="icon.icon"></fa-icon>
+        </div>
+    </div>
+
+    <mat-form-field appearance="fill" class="w-100">
+        <mat-label>Note</mat-label>
+        <textarea matInput formControlName="note" type="text" rows="3"
+            placeholder="Describe your feelings today"></textarea>
+    </mat-form-field>
+
+    <div class="text-center">
+        <button mat-raised-button color="primary">Submit</button>
+    </div>
+</form>

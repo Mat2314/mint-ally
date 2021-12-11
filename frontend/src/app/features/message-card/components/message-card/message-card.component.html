@@ -1,0 +1,13 @@
+<div class="w-100 p-2 notification-holder">
+    <div class="content-holder">
+        <h6> {{title}} </h6>
+        <p>
+            <ng-content></ng-content>
+        </p>
+    </div>
+    <div 
+        class="w-25 image-holder"
+        [ngStyle]="{'background': 'url(\'' + backgroundImage +'\') center center', 'background-size': 'cover'}">
+    </div>
+    <div style="clear:both"></div>
+</div>

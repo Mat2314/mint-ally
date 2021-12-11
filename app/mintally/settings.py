@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'apps.core',
     'apps.health',
     'apps.notifications',
+    'apps.blog'
 ]
 
 MIDDLEWARE = [

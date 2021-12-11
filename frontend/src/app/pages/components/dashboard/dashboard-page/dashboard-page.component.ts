@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LogService } from '@core/services/log.service';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private logService: LogService) { }
 
   ngOnInit(): void {
+  }
+
+  sosMessage() {
+    this.logService.log("SOS message");
   }
 
 }

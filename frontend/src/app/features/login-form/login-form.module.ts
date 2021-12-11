@@ -23,11 +23,11 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   exports: [
     LoginFormComponent,
-    ResetPasswordDialogComponent
+    ResetPasswordDialogComponent,
   ]
 })
 export class LoginFormModule { }

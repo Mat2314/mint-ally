@@ -8,6 +8,7 @@ import { NavigationComponent } from '@pages/components/navigation/navigation/nav
 import { PageNotFoundComponent } from '@pages/components/page-not-found/page-not-found/page-not-found.component';
 import { SettingsPageComponent } from '@pages/components/settings/settings-page/settings-page.component';
 import { WelcomePageComponent } from '@pages/components/welcome/welcome-page/welcome-page.component';
+import { BlogArticlePageComponent } from './components/blog-article-page/blog-article-page.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'welcome', pathMatch: 'full' },
@@ -16,7 +17,8 @@ const routes: Routes = [
         path: 'nav', component: NavigationComponent, children: [
             { path: 'dashboard', component: DashboardPageComponent },
             { path: 'how-are-you', component: HowAreYouPageComponent },
-            { path: 'faq', component: FaqPageComponent },
+            { path: 'blog', component: FaqPageComponent },
+            { path: 'blog/:id', component: BlogArticlePageComponent },
             { path: 'contact', component: ContactPageComponent },
             { path: 'settings', component: SettingsPageComponent },
         ]

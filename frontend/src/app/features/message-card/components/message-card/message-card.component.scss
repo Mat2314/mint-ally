@@ -1,0 +1,25 @@
+.notification-holder {
+    border-radius: 5px;
+    width: 100%;
+    background-color: #eee;
+}
+
+.notification-holder div h6,h5,h4 {
+    font-weight: bold;
+}
+
+.notification-holder div p {
+    padding: 10px;
+}
+
+.content-holder {
+    width: 75%;
+    float: left;
+}
+
+.image-holder {
+    width: 25%;
+    float: left;
+    height: 87px;
+    border-radius: 5px;
+}

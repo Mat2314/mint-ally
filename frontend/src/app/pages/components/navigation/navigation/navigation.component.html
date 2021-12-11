@@ -3,15 +3,21 @@
             
             <!-- Images thanks to pixabay -->
             <app-menu-item
+            (click)="goToPage('dashboard')"
+            [backgroundImage]="'../../../assets/images/home-sunflower.jpg'">
+                Home
+            </app-menu-item>
+
+            <app-menu-item
             (click)="goToPage('how-are-you')"
             [backgroundImage]="'../../../assets/images/sunflower.jpg'">
                 How are you?
             </app-menu-item>
 
             <app-menu-item 
-            (click)="goToPage('faq')"
+            (click)="goToPage('blog')"
             [backgroundImage]="'../../../assets/images/dog.jpg'">
-                FAQ
+                Blog
             </app-menu-item>
 
             <app-menu-item 

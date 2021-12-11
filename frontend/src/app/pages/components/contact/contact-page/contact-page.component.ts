@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faVideo, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-contact-page',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-page.component.scss']
 })
 export class ContactPageComponent implements OnInit {
+  faVideo=faVideo;
+  faPhone=faPhone;
 
   constructor() { }
 

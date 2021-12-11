@@ -21,6 +21,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { BlogArticlePageComponent } from './components/blog-article-page/blog-article-page.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     ContactPageComponent,
     SettingsPageComponent,
     NavigationComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    BlogArticlePageComponent
   ],
   imports: [
     CommonModule,

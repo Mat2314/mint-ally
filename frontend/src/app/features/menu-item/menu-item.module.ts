@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { MenuItemComponent } from './components/menu-item/menu-item.component';
 
 
-
 @NgModule({
   declarations: [
     MenuItemComponent

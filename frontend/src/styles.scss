@@ -6,9 +6,23 @@
 @import '~bootstrap/scss/bootstrap';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .special-font {
     font-family: 'Brush Script MT',cursive;
     color: #eee;
+}
+
+.form-container {
+    box-shadow: 0 0 10px #ddd;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.section-header {
+    width: 100%;
+    text-align: center;
+    color: white;
 }

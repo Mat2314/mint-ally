@@ -3,7 +3,7 @@
     width: 90%;
     border-radius: 5px;
     box-shadow: 0 0 5px #ddd;
-    height: 100px;
+    height: 90px;
     text-align: center;
     font-size: 1.4em;
     color: white;
@@ -19,4 +19,7 @@
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+
+    // width: 100%;
+    // background-color: rgba(255, 255, 255, 0.454);
 }

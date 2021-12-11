@@ -30,3 +30,15 @@ $ ng build
 ### Get back to the root catalogue and run docker compose
 $ docker-compose -f docker-compose.production.yml up
 ```
+
+## Seeders
+To populate database with example values you might want to use the seeders.
+
+```
+### Create daily notifications
+$ python manage.py notifications_seeder
+
+### Create example articles
+$ python manage.py articles_seeder
+
+```
