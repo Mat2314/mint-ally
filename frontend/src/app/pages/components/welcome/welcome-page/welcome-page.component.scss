@@ -1,0 +1,19 @@
+.welcome-page-tabs-container {
+    box-shadow: 0 0 5px #ddd;
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+.background-container {
+    height:100%;
+    // Thanks to https://pixabay.com/ for an image
+    // Image url: https://pixabay.com/photos/mountain-ocean-landscape-marine-4346633/
+    background: url("../../../../../assets/images/mountain.jpg") center center;
+    background-size: cover;
+}
+
+.header-container {
+    width:100%;
+    text-align: center;
+    color: #eee;
+}

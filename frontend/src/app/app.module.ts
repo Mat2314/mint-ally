@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import '@angular/common/locales/global/pl';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     ReactiveFormsModule,
     CoreModule,
     FeaturesModule,
-    PagesModule
+    PagesModule,
+    NgbModule,
+    BrowserAnimationsModule
   ],
   providers: [
     Location, {provide: LocationStrategy, useClass: HashLocationStrategy},

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '@core/services/authentication.service';
 
 @Component({
   selector: 'app-welcome-page',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomePageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthenticationService) { }
 
   ngOnInit(): void {
+    // this.ifLoggedInRedirectToDashboard();
+  }
+
+  ifLoggedInRedirectToDashboard() {
+    this.authService.userIsAuthenticated().subscribe();
   }
 
 }

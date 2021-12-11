@@ -22,7 +22,6 @@ environ.Env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -33,6 +32,10 @@ SECRET_KEY = str(env("SECRET_KEY"))
 DEBUG = bool(env("DEBUG"))
 
 ALLOWED_HOSTS = list(str(env("ALLOWED_HOSTS")).split(','))
+
+CORS_ORIGIN_ALLOW_ALL = bool(env("CORS_ORIGIN_ALLOW_ALL"))
+CORS_ORIGIN_WHITELIST = list(str(env("CORS_ORIGIN_WHITELIST")).split(','))
+
 
 # Application definition
 

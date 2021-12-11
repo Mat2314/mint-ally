@@ -68,12 +68,16 @@ export class AuthenticationService {
   }
 
   /**
-   * Get user data to define which type of user is being authenticated.
-   * @returns 
+   * Calls API to check if user is still logged in.
+   * Checks if user data can be retrieved.
    */
-  getUserData(): Observable<any> {
-    return this.http.get(`${this.apiUrl}core/user-auth/`);
+  userIsAuthenticated(): Observable<any> {
+    return this.http.get(`${this.apiUrl}core/whoami/`).pipe(map((res: any) => {
+      this.router.navigate(['/nav/dashboard']);
+      return res;
+    }, (err: any) => {
+      return err;
+    }));
   }
-
 
 }

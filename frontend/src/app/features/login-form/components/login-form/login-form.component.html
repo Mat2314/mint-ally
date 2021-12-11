@@ -1,0 +1,23 @@
+<div class="login-form-container p-3 mx-2">
+    <form [formGroup]="loginForm">
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="username" type="email"
+                placeholder="Email address">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" type="password"
+                placeholder="Password">
+        </mat-form-field>
+
+        <div class="text-center">
+            <button (click)="resetPasswordDialog()" mat-button color="primary">Forgot password</button>
+        </div>
+
+        <div class="text-center">
+            <button (click)="login()" mat-raised-button color="primary">Login</button>
+        </div>
+    </form>
+</div>
