@@ -51,10 +51,10 @@ services:
         
     frontend:
         build:
-            dockerfile: ./Nginx.Dockerfile
+            dockerfile: ./Frontend.Dockerfile
             context: .
         volumes:
-            - ./volumes/static:/www/static
+            - ./app/static:/www/static
             - ./frontend/dist/${APP_NAME}:/www/${APP_NAME}
             - ./frontend/dist/${APP_NAME}/assets:/assets
         ports:
@@ -62,4 +62,3 @@ services:
         depends_on:
             - api
         restart: on-failure
-
