@@ -1,0 +1,22 @@
+.menu-card-item {
+    position: relative;
+    width: 90%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ddd;
+    height: 100px;
+    text-align: center;
+    font-size: 1.4em;
+    color: white;
+}
+
+.menu-card-item:hover {
+    cursor: pointer;
+}
+
+.menu-card-item span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

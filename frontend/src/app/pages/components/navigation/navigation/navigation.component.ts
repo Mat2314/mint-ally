@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-navigation',
@@ -6,10 +10,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
+  faBars = faBars;
 
-  constructor() { }
+  @ViewChild('drawer') drawer: MatDrawer | undefined;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  goToPage(path: string) {
+    this.router.navigate([`/nav/${path}`]);
+    this.drawer?.close();
   }
 
 }

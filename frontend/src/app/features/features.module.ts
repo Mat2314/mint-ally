@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginFormModule } from './login-form/login-form.module';
+import { MenuItemModule } from './menu-item/menu-item.module';
 
 
 
@@ -8,10 +9,12 @@ import { LoginFormModule } from './login-form/login-form.module';
   declarations: [],
   imports: [
     CommonModule,
-    LoginFormModule
+    LoginFormModule,
+    MenuItemModule
   ],
   exports: [
-    LoginFormModule
+    LoginFormModule,
+    MenuItemModule
   ]
 })
 export class FeaturesModule { }

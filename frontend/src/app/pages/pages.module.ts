@@ -18,6 +18,9 @@ import { PageNotFoundComponent } from
 import { PagesRoutingModule } from './pages.routing';
 import { FeaturesModule } from '@features/features.module';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatButtonModule } from '@angular/material/button';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -35,7 +38,10 @@ import { MatTabsModule } from '@angular/material/tabs';
     CommonModule,
     PagesRoutingModule,
     FeaturesModule,
-    MatTabsModule
+    MatTabsModule,
+    FontAwesomeModule,
+    MatButtonModule,
+    MatSidenavModule
   ]
 })
 export class PagesModule { }

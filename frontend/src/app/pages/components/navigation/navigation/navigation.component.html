@@ -1,5 +1,51 @@
-<div class="menu-container">
-    
-</div>
+<mat-drawer-container class="example-container" [hasBackdrop]="true">
+    <mat-drawer #drawer mode="over">
+            
+            <!-- Images thanks to pixabay -->
+            <app-menu-item
+            (click)="goToPage('how-are-you')"
+            [backgroundImage]="'../../../assets/images/sunflower.jpg'">
+                How are you?
+            </app-menu-item>
 
-<router-outlet></router-outlet>
+            <app-menu-item 
+            (click)="goToPage('faq')"
+            [backgroundImage]="'../../../assets/images/dog.jpg'">
+                FAQ
+            </app-menu-item>
+
+            <app-menu-item 
+            (click)="goToPage('contact')"
+            [backgroundImage]="'../../../assets/images/contact.jpg'">
+                Contact
+            </app-menu-item>
+
+            <app-menu-item 
+            (click)="goToPage('settings')"
+            [backgroundImage]="'../../../assets/images/mobile-phone.jpg'">
+                Settings
+            </app-menu-item>
+
+            <app-menu-item [backgroundImage]="'../../../assets/images/playmobil.jpg'">
+                Logout
+            </app-menu-item>
+    </mat-drawer>
+
+    <mat-drawer-content>
+
+        <div class="row">
+            <div class="col-3">
+                <button class="ml-2 mt-2" (click)="drawer.toggle()" mat-raised-button>
+                    <fa-icon [icon]="faBars"></fa-icon>
+                </button>
+            </div>
+
+            <div class="col-9 pt-2">
+                <h2 class="special-font text-right mr-5">Mentally</h2>
+            </div>
+        </div>
+
+        <router-outlet></router-outlet>
+
+    </mat-drawer-content>
+</mat-drawer-container>
