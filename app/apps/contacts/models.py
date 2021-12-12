@@ -21,12 +21,13 @@ class HelpContact(models.Model):
     
     def prepare_sms_content(self, geolocation_data):
         """Method returns proper sms content to be sent to the help contact"""
-        template = Template('{{receiver_name}}! {{user_full_name}} used SOS button to notify you that his/her mental health is bad. Please call him/her ASAP! The location of {{user_full_name}} -> https://www.google.com/maps/@{{latitude}},{{longitude}},15z')
+        template = Template('{{receiver_name}}! {{user_full_name}} used SOS button to notify you that his/her mental health is bad. Please call him/her ASAP! The location of {{user_full_name}} -> https://www.google.com/maps/@{{latitude}},{{longitude}},{{zoom}}z')
         message = template.render({
             "receiver_name": self.first_name, 
             "user_full_name": ' '.join([self.profile.user.first_name, self.profile.user.last_name]),
             "latitude": geolocation_data['latitude'],
-            "longitude": geolocation_data['longitude']
+            "longitude": geolocation_data['longitude'],
+            "zoom": 20
         })
         
         return message

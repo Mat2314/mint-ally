@@ -8,12 +8,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ResetPasswordDialogComponent } from './dialogs/reset-password-dialog/reset-password-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
 
 
 @NgModule({
   declarations: [
     LoginFormComponent,
-    ResetPasswordDialogComponent
+    ResetPasswordDialogComponent,
+    RegistrationFormComponent
   ],
   imports: [
     CommonModule,
@@ -28,6 +30,7 @@ import { MatDialogModule } from '@angular/material/dialog';
   exports: [
     LoginFormComponent,
     ResetPasswordDialogComponent,
+    RegistrationFormComponent
   ]
 })
 export class LoginFormModule { }
