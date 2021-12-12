@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '@core/services/authentication.service';
+import { SnackBarService } from '@core/services/snack-bar.service';
 
 @Component({
   selector: 'app-welcome-page',
@@ -8,7 +9,8 @@ import { AuthenticationService } from '@core/services/authentication.service';
 })
 export class WelcomePageComponent implements OnInit {
 
-  constructor(private authService: AuthenticationService) { }
+  constructor(private authService: AuthenticationService,
+              private snackBarService: SnackBarService) { }
 
   ngOnInit(): void {
     // this.ifLoggedInRedirectToDashboard();
@@ -16,6 +18,7 @@ export class WelcomePageComponent implements OnInit {
 
   ifLoggedInRedirectToDashboard() {
     this.authService.userIsAuthenticated().subscribe();
+    this.snackBarService.showSnackBar("It's great to see you again!");
   }
 
 }

@@ -4,9 +4,11 @@
     <div class="col-lg-4"></div>
     <div class="col-xs-12 col-lg-4 mx-3">
         <app-message-card 
-            [title]="'TEST'"
-            [backgroundImage]="'../../assets/images/flower-zoom.jpg'"
-        >Taki content</app-message-card>
+            [title]="cardTitle"
+            [backgroundImage]="'../../assets/images/sunrise.jpg'"
+        >
+        {{cardContent}}
+    </app-message-card>
     </div>
     <div class="col-lg-4"></div>
 </div>

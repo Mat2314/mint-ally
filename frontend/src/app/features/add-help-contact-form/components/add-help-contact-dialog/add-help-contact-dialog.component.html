@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Add contact</h1>
+
+<div mat-dialog-content>
+    <app-add-help-contact-form 
+    [mode]="data.mode"
+    [userData]="data.userData"
+    (submitted)="onSubmitted()"
+    ></app-add-help-contact-form>
+</div>
+
+<div mat-dialog-actions class="d-flex justify-content-around">
+    <button mat-raised-button (click)="onNoClick()">Cancel</button>
+    <button *ngIf="data.mode === 'edit'" (click)="deleteContact()" mat-raised-button color="warn">Delete</button>
+</div>

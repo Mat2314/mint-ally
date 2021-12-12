@@ -21,6 +21,7 @@ services:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+      - DJANGO_SETTINGS_MODULE=mintally.settings
     depends_on:
       - db
     restart: on-failure

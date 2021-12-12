@@ -1,3 +1,4 @@
+import datetime
 from django.core.management.base import BaseCommand, CommandError
 from django.contrib.auth.models import Permission, User
 from django.contrib.auth.models import Group
@@ -18,7 +19,7 @@ class Command(BaseCommand):
             ]
             
             for notification in EXAMPLE_NOTIFICATIONS:
-                DailyNotification.objects.create(content=notification)
+                DailyNotification.objects.create(content=notification, last_sent_date=datetime.date.today())
             
             self.stdout.write(self.style.SUCCESS(f"Populated database with {len(EXAMPLE_NOTIFICATIONS)} notifications!"))
 

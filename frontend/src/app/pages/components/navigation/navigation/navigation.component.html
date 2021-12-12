@@ -28,11 +28,13 @@
 
             <app-menu-item 
             (click)="goToPage('settings')"
-            [backgroundImage]="'../../../assets/images/mobile-phone.jpg'">
+            [backgroundImage]="'../../../assets/images/galaxy.jpg'">
                 Settings
             </app-menu-item>
 
-            <app-menu-item [backgroundImage]="'../../../assets/images/playmobil.jpg'">
+            <app-menu-item 
+            (click)="logout()"
+            [backgroundImage]="'../../../assets/images/playmobil.jpg'">
                 Logout
             </app-menu-item>
     </mat-drawer>

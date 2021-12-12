@@ -13,7 +13,7 @@ export class HttpService {
   constructor(private http: HttpClient) { }
 
   httpGet(path: string, params = {}): Observable<any> {
-    return this.http.get(`${this.apiUrl}${path}`, params);
+    return this.http.get(`${this.apiUrl}${path}`, {params: params});
   }
 
   httpPost(path: string, data = {}): Observable<any> {
@@ -25,6 +25,6 @@ export class HttpService {
   }
 
   httpDelete(path: string, params = {}): Observable<any> {
-    return this.http.delete(`${this.apiUrl}${path}`, params);
+    return this.http.delete(`${this.apiUrl}${path}`, {params: params});
   }
 }

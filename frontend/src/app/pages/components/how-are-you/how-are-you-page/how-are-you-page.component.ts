@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HowAreYouPageComponent implements OnInit {
 
+  public cardTitle: string = "Tell us how you feel";
+  public cardContent: string = "Here you can select your current mood and describe your feelings more deeply";
+
   constructor() { }
 
   ngOnInit(): void {

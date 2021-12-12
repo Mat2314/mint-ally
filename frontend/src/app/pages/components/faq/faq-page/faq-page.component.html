@@ -3,10 +3,11 @@
 <div class="row">
     <div class="col-lg-4"></div>
     <div class="col-xs-12 col-lg-4 px-4">
-        <app-article-short
-            [title]="'Example'"
-            [shortText]="'Example of a short text'"
-            class="my-1"></app-article-short>
+        <app-article-short *ngFor="let article of articles"
+            [articleId]="article.id"
+            [title]="article.title"
+            [shortText]="article.shortened_text"
+            [backgroundImage]="'../../../assets/images/sweden-sky.jpg'"></app-article-short>
     </div>
 
     <div class="col-lg-4"></div>

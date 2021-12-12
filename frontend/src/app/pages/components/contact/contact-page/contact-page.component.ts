@@ -10,9 +10,14 @@ export class ContactPageComponent implements OnInit {
   faVideo=faVideo;
   faPhone=faPhone;
 
+  public lat: string | undefined;
+  public lng: string | undefined;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  
 
 }

@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '@core/services/authentication.service';
 import { LogService } from '@core/services/log.service';
+import { SnackBarService } from '@core/services/snack-bar.service';
 import { ResetPasswordDialogComponent } from '@features/login-form/dialogs/reset-password-dialog/reset-password-dialog.component';
 
 @Component({
@@ -21,7 +22,8 @@ export class LoginFormComponent implements OnInit {
   constructor(private authService: AuthenticationService,
     private logService: LogService,
     private router: Router,
-    private dialog: MatDialog) { }
+    private dialog: MatDialog,
+    private snackBarService: SnackBarService) { }
 
 
   ngOnInit(): void {
@@ -30,6 +32,7 @@ export class LoginFormComponent implements OnInit {
   login() {
     this.authService.login(this.loginForm.getRawValue()).subscribe(
       res => {
+        this.snackBarService.showSnackBar("It's great to see you again!");
         this.router.navigate(['/nav/dashboard']);
       }, err => {
         this.logService.log(err);

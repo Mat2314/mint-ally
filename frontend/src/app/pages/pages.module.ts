@@ -20,8 +20,10 @@ import { FeaturesModule } from '@features/features.module';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { BlogArticlePageComponent } from './components/blog-article-page/blog-article-page.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { BlogArticlePageComponent } from './components/blog-article-page/blog-ar
     MatTabsModule,
     FontAwesomeModule,
     MatButtonModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatSlideToggleModule,
+    MatTableModule
   ]
 })
 export class PagesModule { }

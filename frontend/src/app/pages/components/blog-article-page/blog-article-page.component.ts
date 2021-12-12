@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-blog-article-page',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogArticlePageComponent implements OnInit {
 
-  constructor() { }
+  public articleId: string = "";
+
+  constructor(
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
+    this.articleId = this.route.snapshot.params.id;
   }
 
 }

@@ -1,1 +1,59 @@
 <h3 class="section-header">Settings</h3>
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-xs-12 col-md-4 px-4">
+        <mat-slide-toggle
+            #slideToggleButton
+            color="primary"
+            (change)="toggleNotifications()"
+            [checked]="notificationsOn"
+            style="color: white;">Notifications {{slideToggleButton.checked ? 'on' : 'off'}}
+        </mat-slide-toggle>
+
+        <h4 class="text-white mt-4">Your help contacts</h4>
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8
+            w-100">
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="first_name">
+                <th mat-header-cell *matHeaderCellDef> First Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.first_name}}
+                </td>
+            </ng-container>
+
+            <!-- Column -->
+            <ng-container matColumnDef="last_name">
+                <th mat-header-cell *matHeaderCellDef> Last name </th>
+                <td mat-cell *matCellDef="let element"> {{element.last_name}}
+                </td>
+            </ng-container>
+
+            <!-- Column -->
+            <ng-container matColumnDef="phone_number">
+                <th mat-header-cell *matHeaderCellDef> Phone number </th>
+                <td mat-cell *matCellDef="let element"> {{element.phone_number}}
+                </td>
+            </ng-container>
+
+            <!-- Details -->
+            <ng-container matColumnDef="details">
+                <th mat-header-cell *matHeaderCellDef class="text-right"> Details </th>
+                <td mat-cell *matCellDef="let element" class="text-right"> 
+                    <button (click)="editContactDialog(element)" mat-button color="primary">
+                        <fa-icon [icon]="faEdit"></fa-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <div *ngIf="contactsList.length < 5" class="text-center mt-2">
+            <button (click)="addNewContactDialog()" mat-raised-button color="primary">Add new contact</button>
+        </div>
+    </div>
+    <div class="col-md-4"></div>
+</div>

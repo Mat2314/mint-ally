@@ -5,25 +5,27 @@ import { MenuItemModule } from './menu-item/menu-item.module';
 import { MoodFormModule } from './mood-form/mood-form.module';
 import { MessageCardModule } from './message-card/message-card.module';
 import { BlogModule } from './blog/blog.module';
-
-
+import { AddHelpContactFormModule } from './add-help-contact-form/add-help-contact-form.module';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
     LoginFormModule,
     MenuItemModule,
     MoodFormModule,
     MessageCardModule,
-    BlogModule
+    BlogModule,
+    AddHelpContactFormModule
   ],
   exports: [
     LoginFormModule,
     MenuItemModule,
     MoodFormModule,
     MessageCardModule,
-    BlogModule
+    BlogModule,
+    AddHelpContactFormModule
   ]
 })
 export class FeaturesModule { }

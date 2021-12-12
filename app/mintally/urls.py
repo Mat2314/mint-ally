@@ -26,5 +26,5 @@ urlpatterns = [
     url(r'^core/', include('apps.core.urls')),
     url(r'^health/', include('apps.health.urls')),
     url(r'^notifications/', include('apps.notifications.urls')),
-    
+    url(r'^blog/', include('apps.blog.urls')),
 ]

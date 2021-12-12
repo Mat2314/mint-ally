@@ -17,9 +17,9 @@ class HealthStatus(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='health_statuses')
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField()
     mood = models.CharField(max_length=32, choices=MOOD, default="neutral")
     note = models.TextField(null=True, blank=True)
     
     def __str__(self):
-        return f'{self.profile.user.first_name} {self.profile.user.last_name} - {self.data.strftime("%d-%m-%Y")}'
+        return f'{self.profile.user.first_name} {self.profile.user.last_name} - {self.date.strftime("%d-%m-%Y")}'

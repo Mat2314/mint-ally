@@ -37,9 +37,10 @@
 .daily-notification-holder {
     border-radius: 5px;
     width: 100%;
-    background-color: #eee;
+    background-color: rgba(238, 238, 238, 0.548);
 }
 
 .daily-notification-holder h6,h5,h4 {
     font-weight: bold;
+    color: rgb(44, 31, 181);
 }

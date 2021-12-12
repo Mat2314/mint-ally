@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '@core/services/authentication.service';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -14,7 +15,7 @@ export class NavigationComponent implements OnInit {
 
   @ViewChild('drawer') drawer: MatDrawer | undefined;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: AuthenticationService) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +23,10 @@ export class NavigationComponent implements OnInit {
   goToPage(path: string) {
     this.router.navigate([`/nav/${path}`]);
     this.drawer?.close();
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
 }

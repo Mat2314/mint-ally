@@ -11,6 +11,8 @@ export class ArticleShortComponent implements OnInit {
   @Input() articleId: string = "";
   @Input() title: string = "";
   @Input() shortText: string = "";
+  @Input() backgroundImage: string = "";
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {

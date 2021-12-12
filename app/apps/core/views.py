@@ -27,3 +27,12 @@ class UserAuthenticationViewSet(viewsets.ModelViewSet):
         """
         serializer = ProfileSerializer(request.user.profile)
         return Response(serializer.data)
+    
+    @handle_exceptions("Could not update user data")
+    def put(self, request):
+        """Update user data"""
+        profile = request.user.profile
+        print(request.data)
+        profile.notifications_on = request.data['notifications_on']
+        profile.save()
+        return Response({"message":"Updated user data"})

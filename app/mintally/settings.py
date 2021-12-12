@@ -36,6 +36,8 @@ ALLOWED_HOSTS = list(str(env("ALLOWED_HOSTS")).split(','))
 CORS_ORIGIN_ALLOW_ALL = bool(env("CORS_ORIGIN_ALLOW_ALL"))
 CORS_ORIGIN_WHITELIST = list(str(env("CORS_ORIGIN_WHITELIST")).split(','))
 
+SMSAPI_FROM = str(env("SMSAPI_FROM"))
+SMSAPI_TOKEN = str(env("SMSAPI_TOKEN"))
 
 # Application definition
 
